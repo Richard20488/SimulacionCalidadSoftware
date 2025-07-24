@@ -18,7 +18,7 @@ private WebDriver driver;
 		System.getProperty("webdriver.chrome.drive", "./src/test/resources/Driver/chromedriver.exe");
 		driver = new ChromeDriver(co);
 		driver.manage().window().maximize();
-		driver.get("https://demoqa.com/automation-practice-form");
+		driver.get("https://demoqa.com/text-box");
 	}
 	
 	@Test
@@ -26,42 +26,20 @@ private WebDriver driver;
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		js.executeScript("window.scrollBy(0, 250)");
+		js.executeScript("window.scrollBy(0, 300)");
 		
-		WebElement txtUsername = driver.findElement(By.id("firstName"));
-		WebElement txtApellido = driver.findElement(By.id("lastName"));
+		WebElement txtUsername = driver.findElement(By.id("userName"));
 		WebElement txtCorreo = driver.findElement(By.id("userEmail"));
+		WebElement txtDireccion = driver.findElement(By.id("currentAddress"));
+		WebElement txtDireccion2 = driver.findElement(By.id("permanentAddress"));
 		
 		txtUsername.sendKeys("Ana");
-		txtApellido.sendKeys("Perez");
 		txtCorreo.sendKeys("anape@gmail.com");
+		txtDireccion.sendKeys("Ya tu sabe");
+		txtDireccion2.sendKeys("Ya tu sabe x2");		
 		
-		WebElement txtGenero = driver.findElement(By.className("custom-control-label"));
+		WebElement btnSubmit = driver.findElement(By.id("submit"));
 		
-		txtGenero.click();
-		
-		WebElement txtNumero = driver.findElement(By.id("userNumber"));
-		
-		txtNumero.sendKeys("8523697410");
-		
-		
-		
-		WebElement txtAsunto = driver.findElement(By.id("subjectsInput"));
-		
-		txtAsunto.sendKeys("Compra.");
-		
-		WebElement txtGusto = driver.findElement(By.className("custom-control-label"));
-		
-		txtGusto.click();
-		
-		
-		WebElement txtDireccion = driver.findElement(By.id("currentAddress"));
-		
-		txtDireccion.sendKeys("Puebla");
-		
-		
-		WebElement btnAgregarP5 = driver.findElement(By.id("submit"));
-		
-		btnAgregarP5.click();
+		btnSubmit.click();
 	}
 }

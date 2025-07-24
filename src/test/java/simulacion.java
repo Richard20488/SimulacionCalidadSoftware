@@ -106,7 +106,7 @@ private WebDriver driver;
 		
 		txtUsername.sendKeys("performance_glitch_user");
 		txtPassword.sendKeys("secret_sauce");
-		btnLogin.click(); // Dura mucho en recargar-reconocer el usuario y contraseña.
+		btnLogin.click(); // Dura mucho en cargar-reconocer el usuario y contraseña.
 		
 		WebElement btnAgregarP2 = driver.findElement(By.className("shopping_cart_link"));
 		
@@ -165,17 +165,6 @@ private WebDriver driver;
 		txtPostal.sendKeys("12346");
 	}
 	
-	@Test
-	public void SextoTest() {
-		
-		WebElement txtUsername = driver.findElement(By.id("user-name"));
-		WebElement txtPassword = driver.findElement(By.id("password"));
-		WebElement btnLogin = driver.findElement(By.id("login-button"));
-		
-		txtUsername.sendKeys("visual_user");
-		txtPassword.sendKeys("secret_sauce");
-		btnLogin.click();
-	}
 	
 	@After
 	public void cierre() {
